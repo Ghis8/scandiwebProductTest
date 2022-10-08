@@ -10,35 +10,35 @@ const ProdList = () => {
   const [values,setValues]=useState([])
   const [isChecked,setIsChecked]=useState([])
    const divRef=useRef(null)
+
+   const massDelete=()=>{
+    let ids=isChecked.values()
+    for(let id of ids){
+      axios({
+        method:'post',
+        url:'https://productlist008.000webhostapp.com/?delete='+id
+      })
+      .then(res=>{
+        if(res.status === 200){
+          window.location.reload()
+        }
+      })
+      .catch(err=>console.log(err))
+    }
+    
+
+  }
+
    
   useEffect(()=>{
-    massDelete()
+    
     const url="https://productlist008.000webhostapp.com/" 
     axios.get(url).then(res=>{
       setValues(res.data)
     }).catch(err=>console.log(err))
-
     
+  },[massDelete])
     
-  },[])
-    const massDelete=()=>{
-      let ids=isChecked.values()
-      for(let id of ids){
-        axios({
-          method:'post',
-          url:'https://productlist008.000webhostapp.com/?delete='+id
-        })
-        .then(res=>{
-          if(res.status === 200){
-            window.location.reload()
-          }
-        })
-        .catch(err=>console.log(err))
-      }
-      
-
-    }
- 
   return (
     <div className='prodList'>
         <div className='prodListNav'>
