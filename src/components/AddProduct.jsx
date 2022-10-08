@@ -53,7 +53,7 @@ const AddProd = () => {
    
   return (
     <>
-    <form onSubmit={handleSubmit} >
+    <form onSubmit={handleSubmit} id="product_form">
         <div className='nav'>
             <h1>Add Product</h1>
             <div className='btn'>
