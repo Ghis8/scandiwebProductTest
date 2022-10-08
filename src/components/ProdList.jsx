@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useLayoutEffect} from 'react'
+import React,{useState,useLayoutEffect} from 'react'
 import Product from './Product'
 import './prodList.css'
 import { Link} from 'react-router-dom'
@@ -28,18 +28,11 @@ const ProdList = () => {
     
 
   }
-
-   
-  useEffect(()=>{
-    
+  useLayoutEffect(() => {
     const url="https://productlist008.000webhostapp.com/" 
     axios.get(url).then(res=>{
       setValues(res.data)
     }).catch(err=>console.log(err))
-    
-  },[])
-  useLayoutEffect(() => {
-    massDelete()
 
   }, [])
     
