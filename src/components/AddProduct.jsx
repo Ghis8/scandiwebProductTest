@@ -82,8 +82,8 @@ const AddProd = () => {
                 <select name="switcher" onChange={handleChange} id="productType">
                     <option value="">Type Switcher</option>
                     <option value="DVD">DVD</option>
-                    <option value="BOOK">BOOK</option>
-                    <option value="FURNITURE">FURNITURE</option>
+                    <option value="Book">BOOK</option>
+                    <option value="Furniture">FURNITURE</option>
                 </select>
             </div>
             {
@@ -95,14 +95,14 @@ const AddProd = () => {
                     </div>
                     <span>Please Provide size in MB format<b>*</b></span>
                 </div> :
-                (values.switcher ==="BOOK") ?
+                (values.switcher ==="Book") ?
                 <div className='input selected' id="Book">
                     <div>
                         <label htmlFor="">Weight (KG)</label>
                         <input type="text" id="weight" onChange={handleChange} name="weight"/>
                     </div>
                     <span>Please provide weight in KG format<b>*</b></span>
-                </div> : (values.switcher ==="FURNITURE")?
+                </div> : (values.switcher ==="Furniture")?
                 <div className='input selected' id="Furniture">
                     <>
                     <div>
