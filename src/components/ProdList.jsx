@@ -12,10 +12,13 @@ const ProdList = () => {
    const divRef=useRef(null)
    
   useEffect(()=>{
+    massDelete()
     const url="https://productlist008.000webhostapp.com/" 
     axios.get(url).then(res=>{
       setValues(res.data)
     }).catch(err=>console.log(err))
+
+    
     
   },[])
     const massDelete=()=>{
