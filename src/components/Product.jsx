@@ -13,8 +13,8 @@ const Product =React.forwardRef(({handleChange,sku,prodName,price,switcher,size,
             <span>{price}$</span>
             {
               (switcher === "DVD") ? 
-              <span>Size: {size}MB</span>: (switcher === "BOOK") ?
-              <span>Weight: {weights}KG</span> : (switcher === "FURNITURE") ?
+              <span>Size: {size}MB</span>: (switcher === "Book") ?
+              <span>Weight: {weights}KG</span> : (switcher === "Furniture") ?
               <span>Dimension: {height+"x"+width+"x"+lengths}</span> 
               :<span></span>
             }
