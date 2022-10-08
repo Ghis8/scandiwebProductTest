@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useLayoutEffect} from 'react'
 import Product from './Product'
 import './prodList.css'
 import { Link} from 'react-router-dom'
@@ -37,7 +37,11 @@ const ProdList = () => {
       setValues(res.data)
     }).catch(err=>console.log(err))
     
-  },[massDelete])
+  },[])
+  useLayoutEffect(() => {
+    massDelete()
+
+  }, [])
     
   return (
     <div className='prodList'>
